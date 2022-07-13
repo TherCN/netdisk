@@ -29,9 +29,9 @@ tr:nth-child(even) {
     <th>Last modified</th>
   </tr>
         {% for res in site.static_files %}
-          {% if res.path contains '' %}
+          {% if res.path contains 'File' %}
             <tr>
-              <td><a class="post-link" href="{{ res.path | prepend: site.baseurl }}"></a></td>
+              <td><a class="post-link" href="{{ res.path | prepend: site.baseurl }}">{{ res.path | remove:'/File/' }}</a></td>
               <td>{{ res.modified_time | date: "%Y %b %-d" }}</td>
             </tr>
           {% endif %}
