@@ -9,7 +9,7 @@ jobs:
   build_android:
     strategy:
       matrix:
-        arch: [ "aarch64" ]
+        prefix: [ "main" "test" ]
       fail-fast: false
 
     name: "Build for Android ${{matrix.arch}}"
@@ -18,9 +18,10 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
     - name: Build with CI build script
-      run: bash "build_glibc.sh"
+      run: bash "build_glibc_${{matrix.prefix}}.sh"
     - name: Upload glibc build output
       uses: actions/upload-artifact@v2
       with:
         name: "glibc-2.35"
-        path: glibc-2.35.tar.gz
+        path: glibc-2.35-main.tar.xz
+        path: glibc-2.35-test.tar.xz

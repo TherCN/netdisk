@@ -8,4 +8,4 @@ cd build
 make -j8
 sudo make install DESTDIR=$HOME/glibc
 cd $HOME
-tar cvf glibc-2.35.tar.xz glibc
+tar cvf glibc-2.35-main.tar.xz glibc
