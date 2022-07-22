@@ -1,4 +1,4 @@
-bash download_ndk.sh
+. download_ndk.sh
 axel https://ftp.gnu.org/gnu/glibc/glibc-2.35.tar.gz
 tar xvf glibc-2.35.tar.gz
 mkdir build
