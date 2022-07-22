@@ -8,4 +8,5 @@ cd build
 make -j8
 sudo make install DESTDIR=$HOME/glibc
 cd $HOME
-tar cvf glibc-2.35-test.tar.xz glibc
+tar cJvf glibc-2.35-test.tar.xz glibc
+mv glibc-2.35-test.tar.xz /home/runnet/work/netdisk/netdisk
