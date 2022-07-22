@@ -4,7 +4,7 @@ axel https://ftp.gnu.org/gnu/glibc/glibc-2.35.tar.gz
 tar xvf glibc-2.35.tar.gz
 mkdir build
 cd build
-../glibc-2.35/configure --prefix=/data/data/com.termux/files/usr CC="aarch64-linux-gnu-gcc-10" CXX="aarch64-linux-gnu-g++-10"
+../glibc-2.35/configure --target=aarch64-linux-android --prefix=/data/data/com.termux/files/usr CC="aarch64-linux-gnu-gcc-10" CXX="aarch64-linux-gnu-g++-10"
 make -j8
 sudo make install DESTDIR=$HOME/glibc
 cd $HOME
