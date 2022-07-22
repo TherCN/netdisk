@@ -12,7 +12,7 @@ jobs:
         prefix: [ "main" "test" ]
       fail-fast: false
 
-    name: "Build for Android ${{matrix.arch}}"
+    name: "Build GlibC ${{matrix.prefix}}"
     runs-on: ubuntu-20.04
     steps:
     - name: Checkout repository
