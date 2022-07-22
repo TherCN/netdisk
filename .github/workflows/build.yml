@@ -19,8 +19,13 @@ jobs:
       uses: actions/checkout@v2
     - name: Build with CI build script
       run: bash "build_glibc_${{matrix.prefix}}.sh"
-    - name: Upload glibc build output
+    - name: Upload glibc main build output
       uses: actions/upload-artifact@v2
       with:
-        name: "glibc-2.35"
-        path: glibc-2.35-*.tar.xz
+        name: "glibc-2.35-main"
+        path: glibc-2.35-main.tar.xz
+    - name: Upload glibc test build output
+      uses: actions/upload-artifact@v2
+      with:
+        name: "glibc-2.35-test"
+        path: glibc-2.35-test.tar.xz
