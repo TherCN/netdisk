@@ -23,5 +23,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: "glibc-2.35"
-        path: glibc-2.35-main.tar.xz
-        path: glibc-2.35-test.tar.xz
+        path: glibc-2.35-*.tar.xz
