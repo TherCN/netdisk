@@ -9,7 +9,7 @@ jobs:
   build_android:
     strategy:
       matrix:
-        prefix: [ "main" "test" ]
+        prefix: [ "main", "test" ]
       fail-fast: false
 
     name: "Build GlibC ${{matrix.prefix}}"
