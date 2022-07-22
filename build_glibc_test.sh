@@ -4,9 +4,9 @@ axel https://ftp.gnu.org/gnu/glibc/glibc-2.35.tar.gz
 tar xvf glibc-2.35.tar.gz
 mkdir build
 cd build
-../glibc-2.35/configure --host=aarch64-linux-android --build=aarch64-linux-android --prefix=/data/data/com.termux/files/usr/glibc CC="aarch64-linux-gnu-gcc-10" CXX="aarch64-linux-gnu-g++-10" --disable-multiarch
+../glibc-2.35/configure --host=aarch64-linux-android --build=aarch64-linux-android --prefix=/data/data/bin.mt.plus/files/term/usr CC="aarch64-linux-gnu-gcc-10" CXX="aarch64-linux-gnu-g++-10" --disable-multiarch
 make -j8
 sudo make install DESTDIR=$HOME/glibc
 cd $HOME
-tar cJvf glibc-2.35-test.tar.xz glibc
-mv glibc-2.35-test.tar.xz /home/runnet/work/netdisk/netdisk
+tar cJvf glibc-2.35-mt.tar.xz glibc
+mv glibc-2.35-mt.tar.xz /home/runner/work/netdisk/netdisk
