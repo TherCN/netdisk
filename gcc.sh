@@ -1,10 +1,11 @@
-sudo apt update
-sudo apt install gcc-10-aarch64-linux-gnu g++-10-aarch64-linux-gnu axel libgmp-dev libmpc-dev libmpfr-dev -y 1>/dev/null
+sudo apt update 1>/dev/null
+sudo apt install gcc-10-aarch64-linux-gnu g++-10-aarch64-linux-gnu axel -y 1>/dev/null
 axel https://ftp.gnu.org/gnu/gcc/gcc-12.1.0/gcc-12.1.0.tar.xz 1>/dev/null
 tar xf gcc-12.1.0.tar.xz
 mkdir build
 cd gcc-12.1.0
 patch -p1 <../fix-termux.patch
+bash contrib/download_prerequisites
 cd ..
 bash mksysroot
 cd /usr/bin
