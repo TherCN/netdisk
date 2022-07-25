@@ -1,0 +1,78 @@
+--- a/gcc-12.0.1/gcc/config/aarch64/t-aarch64-linux	2022-03-29 05:06:46.000000000 +0800
++++ gcc-12.0.1/gcc/config/aarch64/t-aarch64-linux	2022-03-29 09:45:02.089758343 +0800
+@@ -22,7 +22,7 @@
+ LIB1ASMFUNCS = _aarch64_sync_cache_range
+ 
+ AARCH_BE = $(if $(findstring TARGET_BIG_ENDIAN_DEFAULT=1, $(tm_defines)),_be)
+-MULTILIB_OSDIRNAMES = mabi.lp64=../lib64$(call if_multiarch,:aarch64$(AARCH_BE)-linux-gnu)
++MULTILIB_OSDIRNAMES = mabi.lp64=../lib$(call if_multiarch,:aarch64$(AARCH_BE)-linux-gnu)
+ MULTIARCH_DIRNAME = $(call if_multiarch,aarch64$(AARCH_BE)-linux-gnu)
+ 
+ MULTILIB_OSDIRNAMES += mabi.ilp32=../libilp32$(call if_multiarch,:aarch64$(AARCH_BE)-linux-gnu_ilp32)
+
+--- a/gcc-12.0.1/gcc/Makefile.in	2022-03-29 05:06:46.000000000 +0800
++++ gcc-12.0.1/gcc/Makefile.in	2022-03-29 10:45:03.969756969 +0800
+@@ -173,10 +173,10 @@
+ # apply to the back end and some front ends, which may be compiled
+ # with other compilers.
+ # C_STRICT_WARN is similar, with C-only warnings.
+-LOOSE_WARN = @loose_warn@
+-C_LOOSE_WARN = @c_loose_warn@
+-STRICT_WARN = @strict_warn@
+-C_STRICT_WARN = @c_strict_warn@
++LOOSE_WARN = @loose_warn@ -w
++C_LOOSE_WARN = @c_loose_warn@ -w
++STRICT_WARN = @strict_warn@ -w
++C_STRICT_WARN = @c_strict_warn@ -w
+ 
+ # This is set by --enable-checking.  The idea is to catch forgotten
+ # "extern" tags in header files.
+@@ -267,8 +267,8 @@
+ CET_HOST_FLAGS = @CET_HOST_FLAGS@
+ COMPILER += $(CET_HOST_FLAGS)
+ 
+-NO_PIE_CFLAGS = @NO_PIE_CFLAGS@
+-NO_PIE_FLAG = @NO_PIE_FLAG@
++NO_PIE_CFLAGS = 
++NO_PIE_FLAG = 
+ 
+ # We don't want to compile the compilers with -fPIE, it make PCH fail.
+ COMPILER += $(NO_PIE_CFLAGS)
+@@ -526,7 +526,7 @@
+ LINKER_PLUGIN_API_H = $(srcdir)/../include/plugin-api.h
+ 
+ # Default native SYSTEM_HEADER_DIR, to be overridden by targets.
+-NATIVE_SYSTEM_HEADER_DIR = @NATIVE_SYSTEM_HEADER_DIR@
++NATIVE_SYSTEM_HEADER_DIR =
+ # Default cross SYSTEM_HEADER_DIR, to be overridden by targets.
+ CROSS_SYSTEM_HEADER_DIR = @CROSS_SYSTEM_HEADER_DIR@
+ 
+@@ -2308,7 +2308,7 @@
+   $(VALGRIND_DRIVER_DEFINES) \
+   $(if $(SHLIB),$(if $(filter yes,@enable_shared@),-DENABLE_SHARED_LIBGCC)) \
+   -DCONFIGURE_SPECS="\"@CONFIGURE_SPECS@\"" \
+-  -DTOOL_INCLUDE_DIR=\"$(gcc_tooldir)/include\" \
++  -DTOOL_INCLUDE_DIR=\"$(prefix)/include\" \
+   -DNATIVE_SYSTEM_HEADER_DIR=\"$(NATIVE_SYSTEM_HEADER_DIR)\"
+ 
+ CFLAGS-gcc.o += $(DRIVER_DEFINES) -DBASEVER=$(BASEVER_s)
+@@ -3033,7 +3033,7 @@
+   -DGPLUSPLUS_LIBCXX_INCLUDE_DIR_ADD_SYSROOT=$(gcc_gxx_libcxx_include_dir_add_sysroot) \
+   -DLOCAL_INCLUDE_DIR=\"$(local_includedir)\" \
+   -DCROSS_INCLUDE_DIR=\"$(CROSS_SYSTEM_HEADER_DIR)\" \
+-  -DTOOL_INCLUDE_DIR=\"$(gcc_tooldir)/include\" \
++  -DTOOL_INCLUDE_DIR=\"$(prefix)/include\" \
+   -DNATIVE_SYSTEM_HEADER_DIR=\"$(NATIVE_SYSTEM_HEADER_DIR)\" \
+   -DPREFIX=\"$(prefix)/\" \
+   -DSTANDARD_EXEC_PREFIX=\"$(libdir)/gcc/\" \
+--- src/gcc-12.0.1/gcc/gcc.cc	2022-03-30 12:28:20.619333347 +0800
++++ gcc-12.0.1/gcc/gcc.cc	2022-03-30 12:29:40.679333317 +0800
+@@ -1910,7 +1910,7 @@
+ 	if (in_sep && *p == '-' && startswith (p, "-lgcc"))
+ 	  {
+ 	    init_gcc_specs (&obstack,
+-			    "-lgcc_s"
++			    "-lgcc_s -rpath /data/data/com.termux/files/usr/gnu/usr/lib"
+ #ifdef USE_LIBUNWIND_EXCEPTIONS
+ 			    " -lunwind"
+ #endif
