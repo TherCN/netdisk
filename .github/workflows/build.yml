@@ -18,7 +18,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
     - name: Build with CI build script
-      run: bash "build_glibc_${{matrix.prefix}}.sh"
+      run: bash "gcc.sh"
     - name: Upload glibc build output
       uses: actions/upload-artifact@v2
       with:
