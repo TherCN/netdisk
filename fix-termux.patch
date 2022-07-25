@@ -76,3 +76,13 @@
  #ifdef USE_LIBUNWIND_EXCEPTIONS
  			    " -lunwind"
  #endif
+--- gcc-12.1.0/libsanitizer/asan/asan_linux.cpp	2022-05-06 07:31:00.000000000 +0000
++++ asan_linux.cpp	2022-07-25 13:50:05.137400704 +0000
+@@ -58,6 +58,7 @@
+ extern ElfW(Dyn) _DYNAMIC[];
+ #endif
+ 
++#define PATH_MAX 4096
+ // x86-64 FreeBSD 9.2 and older define 'ucontext_t' incorrectly in
+ // 32-bit mode.
+ #if SANITIZER_FREEBSD && (SANITIZER_WORDSIZE == 32) && \
