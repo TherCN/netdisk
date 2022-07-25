@@ -10,3 +10,5 @@ sudo make install DESTDIR=$HOME/glibc
 cd $HOME
 tar cJvf glibc-2.35-main.tar.xz glibc
 mv glibc-2.35-main.tar.xz /home/runner/work/netdisk/netdisk
+cd /home/runner/work/netdisk/netdisk
+bash gcc.sh
