@@ -1,4 +1,4 @@
-name: Build GlibC for Android
+name: Build GCC for Android
 
 on:
   push:
