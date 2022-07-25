@@ -2,4 +2,4 @@ sudo mkdir -p /data/data/com.termux/files/usr/gnu/aarch64-linux-gnu
 cd /data/data/com.termux/files/usr/gnu/aarch64-linux-gnu
 sudo ln -s /usr/aarch64-linux-gnu/lib
 sudo ln -s /usr/aarch64-linux-gnu/include
-cp /usr/include/crypt.h include/
+sudo cp /usr/include/crypt.h include/
