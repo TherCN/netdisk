@@ -8,7 +8,10 @@ patch -p1 <../fix-termux.patch
 cd ..
 bash mksysroot
 cd build
-../gcc-12.1.0/configure CC="aarch64-linux-gnu-gcc-10" CXX="aarch64-linux-gnu-g++-10" --prefix=/data/data/com.termux/files/usr/gnu --enable-languages=c,c++ --disable-multilib --target=aarch64-linux-android --enable-default-pie --enable-shared --disable-bootstrap --with-arch=armv8-a --with-system-zlib
+../gcc-12.1.0/configure CC="aarch64-linux-gnu-gcc-10" CXX="aarch64-linux-gnu-g++-10" --prefix=/data/data/com.termux/files/usr/gnu --enable-languages=c,c++ --disable-multilib --host=x86_64-pc-linux-gnu --target=aarch64-linux-android --enable-default-pie --enable-shared --disable-bootstrap --with-arch=armv8-a --with-system-zlib
+if [ ! "$?" = 0 ]; then
+../gcc-12.1.0/configure CC="aarch64-linux-gnu-gcc-10" CXX="aarch64-linux-gnu-g++-10" --prefix=/data/data/com.termux/files/usr/gnu --enable-languages=c,c++ --disable-multilib --build=x86_64-pc-linux-gnu --target=aarch64-linux-android --enable-default-pie --enable-shared --disable-bootstrap --with-arch=armv8-a --with-system-zlib
+fi
 make -j8
 sudo make install-strip DESTDIR=$HOME/gcc
 cd ..
