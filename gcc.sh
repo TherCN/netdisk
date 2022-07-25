@@ -1,5 +1,5 @@
 sudo apt update
-sudo apt install gcc-10-aarch64-linux-gnu axel libgmp-dev libmpc-dev libmpfr-dev -y 1>/dev/null
+sudo apt install gcc-10-aarch64-linux-gnu g++-10-aarch64-linux-gnu axel libgmp-dev libmpc-dev libmpfr-dev -y 1>/dev/null
 axel https://ftp.gnu.org/gnu/gcc/gcc-12.1.0/gcc-12.1.0.tar.xz 1>/dev/null
 tar xf gcc-12.1.0.tar.xz
 mkdir build
@@ -9,10 +9,8 @@ cd ..
 bash mksysroot
 cd /usr/bin
 sudo rm gcc g++
-sudo ln -s aarch64-linux-gnu-gcc-10 gcc
-sudo ln -s aarch64-linux-gnu-g++-10 g++
 cd $OLDPWD/build
-../gcc-12.1.0/configure --prefix=/data/data/com.termux/files/usr/gnu --enable-languages=c,c++ --disable-multilib --host=x86_64-pc-linux-gnu --target=aarch64-linux-android --enable-default-pie --enable-shared --disable-bootstrap --with-arch=armv8-a --with-system-zlib
+../gcc-12.1.0/configure --prefix=/data/data/com.termux/files/usr/gnu --enable-languages=c,c++ --disable-multilib --host=x86_64-pc-linux-gnu --target=aarch64-linux-android --enable-default-pie --enable-shared --disable-bootstrap --with-arch=armv8-a --with-system-zlib CC=aarch64-linux-gnu-gcc-10 CXX=aarch64-linux-gnu-g++-10
 make -j8
 sudo make install-strip DESTDIR=$HOME/gcc
 cd ..
