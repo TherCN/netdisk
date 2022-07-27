@@ -7,7 +7,7 @@ do
 patch -p0 -i $file
 done
 cd build
-../glibc-2.35/configure --host=aarch64-linux-android --build=aarch64-linux-android --prefix=/data/data/com.termux/files/usr/gnu CC="aarch64-linux-gnu-gcc-10"  --disable-multiarch
+../glibc-2.35/configure --host=aarch64-linux-android --build=aarch64-linux-android --prefix=/data/data/com.termux/files/usr/glibc CC="aarch64-linux-gnu-gcc-10"  --disable-multiarch
 make -j8
 sudo make install DESTDIR=/home/runner/work/netdisk/netdisk/glibc
 cd ..
