@@ -15,8 +15,7 @@ cd $OLDPWD/build
 --prefix=/data/data/com.termux/files/usr/gnu \
 --enable-languages=c,c++ \
 --disable-multilib \
---build=aarch64-linux-android \
---host=aarch64-linux-android \
+--target=aarch64-linux-android \
 --enable-default-pie \
 --enable-shared \
 --disable-bootstrap \
