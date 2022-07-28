@@ -10,7 +10,7 @@ cd build
 ../glibc-2.35/configure \
 --host=aarch64-linux-gnu \
 --build=aarch64-linux-gnu \
---prefix=/data/data/bin.mt.plus/files/term/usr \
+--prefix=/data/data/com.termux/files/usr \
 --disable-multiarch
 make -j8
 sudo make install DESTDIR=/home/runner/work/netdisk/netdisk/glibc
