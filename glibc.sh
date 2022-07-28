@@ -1,4 +1,4 @@
-. install_cross_toolchain.sh
+. install_cross_toolchain.sh 1>/dev/null
 axel https://ftp.gnu.org/gnu/glibc/glibc-2.35.tar.gz
 tar xvf glibc-2.35.tar.gz
 mkdir build
@@ -8,9 +8,9 @@ patch -p0 -i $file
 done
 cd build
 ../glibc-2.35/configure \
---host=aarch64-linux-android \
---build=aarch64-linux-android \
---prefix=--prefix=/data/data/bin.mt.plus/files/term/usr \
+--host=aarch64-linux-gnu \
+--build=aarch64-linux-gnu \
+--prefix=/data/data/bin.mt.plus/files/term/usr \
 --disable-multiarch
 make -j8
 sudo make install DESTDIR=/home/runner/work/netdisk/netdisk/glibc
