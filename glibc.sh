@@ -11,7 +11,7 @@ cd build
 --host=aarch64-linux-gnu \
 --build=aarch64-linux-gnu \
 --prefix=/usr \
---disable-multiarch
+--disable-multi-arch
 make -j8
 sudo make install DESTDIR=/home/runner/work/netdisk/netdisk/glibc
 cd ..
