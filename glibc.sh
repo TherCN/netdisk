@@ -12,6 +12,10 @@ cd build
 --build=aarch64-linux-gnu \
 --prefix=/usr \
 --disable-multi-arch
+echo "slibdir=/usr/lib" >> configparms
+echo "rtlddir=/usr/lib" >> configparms
+echo "sbindir=/usr/bin" >> configparms
+echo "rootsbindir=/usr/bin" >> configparms
 make -j8
 sudo make install DESTDIR=/home/runner/work/netdisk/netdisk/glibc
 cd ..
