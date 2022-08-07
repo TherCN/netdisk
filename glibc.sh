@@ -1,6 +1,6 @@
 . install_cross_toolchain.sh 1>/dev/null
 axel https://ftp.gnu.org/gnu/glibc/glibc-2.36.tar.gz
-tar xvf glibc-2.35.tar.gz
+tar xvf glibc-2.36.tar.gz
 mkdir build
 for file in glibc-patch/*
 do
@@ -19,4 +19,4 @@ echo "rootsbindir=/usr/bin" >> configparms
 make -j8
 sudo make install DESTDIR=/home/runner/work/netdisk/netdisk/glibc
 cd ..
-tar cJvf glibc-2.35-main.tar.xz glibc
+tar cJvf glibc-2.36-main.tar.xz glibc
