@@ -1,5 +1,5 @@
 . install_cross_toolchain.sh 1>/dev/null
-axel https://ftp.gnu.org/gnu/glibc/glibc-2.35.tar.gz
+axel https://ftp.gnu.org/gnu/glibc/glibc-2.36.tar.gz
 tar xvf glibc-2.35.tar.gz
 mkdir build
 for file in glibc-patch/*
