@@ -1,6 +1,6 @@
 . install_cross_toolchain.sh 1>/dev/null
 axel https://ftp.gnu.org/gnu/glibc/glibc-2.36.tar.gz 1>/dev/null
-tar xvf glibc-2.36.tar.gz
+tar xf glibc-2.36.tar.gz
 mkdir build
 for file in glibc-patch/*
 do
@@ -11,7 +11,7 @@ echo "slibdir=/usr/lib" >> configparms
 echo "rtlddir=/usr/lib" >> configparms
 echo "sbindir=/usr/bin" >> configparms
 echo "rootsbindir=/usr/bin" >> configparms
-../glibc-2.35/configure \
+../glibc-2.36/configure \
 --host=aarch64-linux-gnu \
 --build=aarch64-linux-gnu \
 --prefix=/usr \
