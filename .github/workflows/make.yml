@@ -1,4 +1,4 @@
-name: Build GCC for Android
+name: Build glibc for Android
 
 on:
   push:
@@ -12,7 +12,7 @@ jobs:
         prefix: [ "main" ]
       fail-fast: false
 
-    name: "Build GCC ${{matrix.prefix}}"
+    name: "Build glibc ${{matrix.prefix}}"
     runs-on: ubuntu-20.04
     steps:
     - name: Checkout repository

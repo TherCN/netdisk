@@ -1,14 +1,9 @@
-name: Build GCC for Android
-
-on:
-  push:
-  pull_request:
-  workflow_dispatch:
-
+name: CI
+on: [push]
 jobs:
-    name: "ssh test"
-    runs-on: ubuntu-20.04
+  build:
+    runs-on: ubuntu-latest
     steps:
-    - name: Debugging with tmate
-  uses: mxschmitt/action-tmate@v3.11
-
+    - uses: actions/checkout@v2
+    - name: Setup tmate session
+      uses: mxschmitt/action-tmate@v3
