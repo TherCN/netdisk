@@ -1,0 +1,26 @@
+name: Build GCC for Android
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build_android:
+    strategy:
+      matrix:
+        prefix: [ "main" ]
+      fail-fast: false
+
+    name: "Build GCC ${{matrix.prefix}}"
+    runs-on: ubuntu-20.04
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+    - name: Build with build script
+      run: bash "glibc.sh"
+    - name: Upload build output
+      uses: actions/upload-artifact@v2
+      with:
+        name: "glibc-2.35"
+        path: glibc-*.tar.xz

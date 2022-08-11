@@ -7,14 +7,10 @@ do
 patch -p0 -i $file
 done
 cd build
-echo "slibdir=/usr/lib" >> configparms
-echo "rtlddir=/usr/lib" >> configparms
-echo "sbindir=/usr/bin" >> configparms
-echo "rootsbindir=/usr/bin" >> configparms
 ../glibc-2.36/configure \
 --host=aarch64-linux-gnu \
 --build=aarch64-linux-gnu \
---prefix=/usr \
+--prefix=/data/data/bin.mt.plus/files/term/usr \
 --disable-multi-arch
 make -j8
 sudo make install DESTDIR=/home/runner/work/netdisk/netdisk/glibc
