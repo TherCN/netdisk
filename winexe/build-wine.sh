@@ -2,8 +2,8 @@
 cd /home/runner/work/netdisk/netdisk/winexe
 . install_dep.sh >/dev/null
 sudo apt install axel >/dev/null
-WINE_MAIN_VERSION=7.0
-WINE_VERSION=7.0
+WINE_MAIN_VERSION=6.x
+WINE_VERSION=6.23
 axel https://dl.winehq.org/wine/source/${WINE_MAIN_VERSION}/wine-${WINE_VERSION}.tar.xz 1>/dev/null
 tar xf wine-${WINE_VERSION}.tar.xz
 cd wine-${WINE_VERSION}
@@ -15,7 +15,7 @@ autoreconf -f
 cd ..
 mkdir wine64
 cd wine64
-../wine-${WINE_VERSION}/configure --prefix=/data/data/com.termux/files/home/wine $@ --enable-win64 --disable-rpath
+../wine-${WINE_VERSION}/configure --prefix=/data/data/com.termux/files/home/wine $@ --enable-win64 --disable-rpath --enable-static
 make -j8
 sudo make install DESTDIR=/home/runner/work/netdisk/netdisk/wine STRIP=1
 cd /home/runner/work/netdisk/netdisk/wine/data/data/com.termux/files/home/wine
