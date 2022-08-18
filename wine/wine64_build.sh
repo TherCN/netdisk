@@ -10,4 +10,4 @@ then
     make clean
 fi
 make -j 12
-make install DESTDIR=/home/runner/work/netdisk/netdisk/wine
+make install DESTDIR=/home/runner/work/netdisk/netdisk/wine STRIP=1
