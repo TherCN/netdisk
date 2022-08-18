@@ -3,6 +3,7 @@ export CFLAGS="-O3"
 export C_INCLUDE_PATH="$C_INCLUDE_PATH:/usr/local/include/"
 export LIBRARY_PATH="$LIBRARY_PATH:/usr/local/lib/"
 
+/home/runner/work/netdisk/netdisk/build-wine/install_32bits_dependencies.sh
 cd "/home/runner/work/netdisk/netdisk/build-wine/wine-6.23"
 sed -i "s|/tmp|/data/data/com.termux/files/usr/tmp|g" $(find . -name "*.c")
 mkdir -p "/home/runner/work/netdisk/netdisk/build-wine/wine-6.23/wine64-build/"

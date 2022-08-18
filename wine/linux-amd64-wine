@@ -21,11 +21,10 @@ sudo apt-get -y install mingw-w64
 # VKD3D
 mkdir -p /home/runner/work/netdisk/netdisk/build-wine/vkd3d-64
 cd /home/runner/work/netdisk/netdisk/build-wine/vkd3d-64
-wget http://cdn-fastly.deb.debian.org/debian/pool/main/v/vulkan/libvulkan1_1.1.70+dfsg1-1~bpo9+1_amd64.deb
+sudo apt install libvulkan libvulkan-dev -y
 wget http://deb.debian.org/debian/pool/main/v/vkd3d/libvkd3d-dev_1.1-3_amd64.deb
 wget http://deb.debian.org/debian/pool/main/v/vkd3d/libvkd3d1_1.1-3_amd64.deb
 wget http://ftp.de.debian.org/debian/pool/main/v/vkd3d/libvkd3d-utils1_1.1-3_amd64.deb
-wget http://cdn-fastly.deb.debian.org/debian/pool/main/v/vulkan/libvulkan-dev_1.1.70+dfsg1-1~bpo9+1_amd64.deb
 sudo dpkg -i *.deb
 
 #OSSv4
