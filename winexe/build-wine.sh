@@ -8,6 +8,7 @@ axel https://dl.winehq.org/wine/source/${WINE_MAIN_VERSION}/wine-${WINE_VERSION}
 tar xf wine-${WINE_VERSION}.tar.xz
 cd wine-${WINE_VERSION}
 sed -i "s|/tmp|/data/data/com.termux/files/usr/tmp|g" $(find -name "*.c")
+cd ..
 mkdir wine64
 cd wine64
 ../wine-${WINE_VERSION}/configure --prefix=/data/data/com.termux/files/home/wine $@ --enable-win64 --disable-rpath
