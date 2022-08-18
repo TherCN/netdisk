@@ -9,6 +9,9 @@ tar xf wine-${WINE_VERSION}.tar.xz
 cd wine-${WINE_VERSION}
 sed -i "s|/tmp|/data/data/com.termux/files/usr/tmp|g" $(find -name "*.c")
 patch -p1 ../fix-build.patch
+dlls/winevulkan/make_vulkan
+tools/make_requests
+autoreconf -f
 cd ..
 mkdir wine64
 cd wine64
