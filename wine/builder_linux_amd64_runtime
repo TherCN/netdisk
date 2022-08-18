@@ -1,0 +1,32 @@
+#!/bin/bash
+
+mkdir -p '/home/runner/work/netdisk/netdisk/build-wine/runtime/lib64'
+sudo apt update
+sudo apt install rsync wget -y
+rsync -ar --exclude='*.a*' --exclude='*.la*' --exclude='*.sh*' --exclude='*.h*' --exclude='pkgconfig' --exclude='perl*' --exclude='ImageMagick-6.9.7' --exclude='avahi' --exclude='cmake' --exclude='dbus-1.0' --exclude='krb5' --exclude='libgphoto2-dev' --exclude='icu' --exclude='wx' --exclude='xen' --exclude='qt' --exclude='vdpau' --exclude='libdrm*' --exclude='dri' --exclude='audit' --exclude='gconv' --exclude='libgcc_s.so.1' --exclude='libdl*' --exclude='*.o*' --exclude='libBrokenLocale*' --exclude='libm.so*' --exclude='pulseaudio' --exclude='libQt*' --exclude='sse2/libQt*' --exclude='libfontconfig*' --exclude='LibLLVM*' /usr/lib/x86_64-linux-gnu/ /home/runner/work/netdisk/netdisk/build-wine/runtime/lib64/
+
+rsync -ar --exclude='*.a*' --exclude='*.la*' --exclude='*.sh*' --exclude='*.h*' --exclude='ld-*' --exclude='libBrokenLocale*' --exclude='libSegFault*' -exclude='libanl*' --exclude='libc-2.24.so' --exclude='libc.so.6' --exclude='libcidn*' --exclude='libcrypt*' --exclude='libdl*' --exclude='libm-*' --exclude='libmemusage.so' --exclude='libnsl*' --exclude='libnss*' --exclude='libpcprofile.so' --exclude='libpthread*' --exclude='libresolv*' --exclude='librt*' --exclude='libthread*' --exclude='libutil*' --exclude='*.o*' /lib/x86_64-linux-gnu/ /home/runner/work/netdisk/netdisk/build-wine/runtime/lib64/ #Do not copy libc6 !
+
+cp -da /etc/alternatives/libtxc-dxtn-x86_64-linux-gnu /home/runner/work/netdisk/netdisk/build-wine/runtime/lib64
+cp -da /usr/lib/x86_64-linux-gnu/pulseaudio/libpulsecommon-10.0.so /home/runner/work/netdisk/netdisk/build-wine/runtime/lib64
+
+### We fix some symlinks
+cd '/home/runner/work/netdisk/netdisk/build-wine/runtime/lib64/'
+ln -sf libcom_err.so.2 libcom_err.so
+ln -sf libdbus-1.so.3.14.16 libdbus-1.so
+ln -sf libexpat.so.1.6.2 libexpat.so
+ln -sf libglib-2.so.0 libglib-2.so
+ln -sf libidn.so.11 libidn.so
+ln -sf liblzma.so.5.2.2 liblzma.so
+ln -sf libpcre.so.3 libpcre.so
+ln -sf libtinfo.so.5 libtinfo.so
+ln -sf libtxc-dxtn-x86_64-linux-gnu libtxc_dxtn.so
+ln -sf s2tc/libtxc-dtxn.so libtxc-dxtn-x86_64-linux-gnu
+ln -sf libz.so.1.2.8 libz.so
+ln -sf libglib-2.0.so.0 libglib-2.0.so
+### We use our own SDL2 and FAudio
+rm -rf libSDL2*.so*
+cp /usr/lib/libSDL2*.so* '/home/runner/work/netdisk/netdisk/build-wine/runtime/lib64/'
+cp /usr/local/lib/libFAudio*.so* '/home/runner/work/netdisk/netdisk/build-wine/runtime/lib64/'
+wget https://dl.winehq.org/wine/source/6.x/wine-6.23.tar.xz
+echo '[END]'
