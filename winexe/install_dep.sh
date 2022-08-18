@@ -5,7 +5,15 @@ sudo apt-get -y install build-essential git
 #additional packages for 32-bit
 packages=(
   gettext
-  libgnutls-dev
+  libgnutls28-dev
+  linkrb5-dev
+  oss4-dev
+  libvulkan-dev
+  libvkd3d-dev
+  libsdl2-dev
+  libusb-1.0-0-dev
+  libpcap-dev
+  libsane-dev
   libasound2-dev
   libdbus-1-dev
   libgphoto2-dev
@@ -48,3 +56,5 @@ packages=(
 sudo apt-get -y install ${packages[*]}
 #the following causes an odd conflict
 sudo rm -f /usr/share/doc/ocl-icd-opencl-dev/changelog.Debian.gz
+sudo sed -i "s|# deb-src|deb-src|g" /etc/apt/sources.list
+sudo apt update && sudo apt build-dep wine -y
