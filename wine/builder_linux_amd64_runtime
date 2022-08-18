@@ -28,6 +28,7 @@ ln -sf libglib-2.0.so.0 libglib-2.0.so
 rm -rf libSDL2*.so*
 cp /usr/lib/libSDL2*.so* '/home/runner/work/netdisk/netdisk/build-wine/runtime/lib64/'
 cp /usr/local/lib/libFAudio*.so* '/home/runner/work/netdisk/netdisk/build-wine/runtime/lib64/'
+cd /home/runner/work/netdisk/netdisk/build-wine
 wget -q https://dl.winehq.org/wine/source/6.x/wine-6.23.tar.xz
 tar xf wine-6.23.tar.xz
 echo '[END]'
