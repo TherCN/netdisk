@@ -1,4 +1,5 @@
 #!/bin/bash
+cd /home/runner/work/netdisk/netdisk/winexe
 . install_dep.sh >/dev/null
 sudo apt install axel >/dev/null
 WINE_MAIN_VERSION=7.0
