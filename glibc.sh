@@ -1,6 +1,9 @@
 . install_cross_toolchain.sh 1>/dev/null
 axel https://ftp.gnu.org/gnu/glibc/glibc-2.36.tar.gz 1>/dev/null
 tar xf glibc-2.36.tar.gz
+cd glibc-2.36
+sed -i "s|/etc/ld.so|/data/data/bin.mt.plus/files/term/usr/etc/ld.so|g" $(find -name "*.c")
+cd ..
 mkdir build
 for file in glibc-patch/*
 do
