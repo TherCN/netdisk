@@ -4,7 +4,7 @@ export C_INCLUDE_PATH="$C_INCLUDE_PATH:/usr/local/include/"
 export LIBRARY_PATH="$LIBRARY_PATH:/usr/local/lib/"
 
 cd "/home/runner/work/netdisk/netdisk/build-wine/wine-6.23"
-sed "s|/tmp|/data/data/com.termux/files/usr/tmp|g" $(find . -name "*.c")
+sed -i "s|/tmp|/data/data/com.termux/files/usr/tmp|g" $(find . -name "*.c")
 mkdir -p "/home/runner/work/netdisk/netdisk/build-wine/wine-6.23/wine64-build/"
 mkdir -p "/home/runner/work/netdisk/netdisk/build-wine/wine-6.23/wine32-build/"
 
