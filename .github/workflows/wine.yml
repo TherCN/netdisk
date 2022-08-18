@@ -18,7 +18,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
     - name: Build with build script
-      run: bash "winexe/build-wine.sh"
+      run: bash "wine.sh"
     - name: Upload build output
       uses: actions/upload-artifact@v2
       with:
