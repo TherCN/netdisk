@@ -2,7 +2,7 @@
 
 mkdir -p '/home/runner/work/netdisk/netdisk/build-wine/runtime/lib64'
 sudo apt update
-sudo apt install rsync wget -y
+sudo apt --fix-broken install rsync wget -y
 rsync -ar --exclude='*.a*' --exclude='*.la*' --exclude='*.sh*' --exclude='*.h*' --exclude='pkgconfig' --exclude='perl*' --exclude='ImageMagick-6.9.7' --exclude='avahi' --exclude='cmake' --exclude='dbus-1.0' --exclude='krb5' --exclude='libgphoto2-dev' --exclude='icu' --exclude='wx' --exclude='xen' --exclude='qt' --exclude='vdpau' --exclude='libdrm*' --exclude='dri' --exclude='audit' --exclude='gconv' --exclude='libgcc_s.so.1' --exclude='libdl*' --exclude='*.o*' --exclude='libBrokenLocale*' --exclude='libm.so*' --exclude='pulseaudio' --exclude='libQt*' --exclude='sse2/libQt*' --exclude='libfontconfig*' --exclude='LibLLVM*' /usr/lib/x86_64-linux-gnu/ /home/runner/work/netdisk/netdisk/build-wine/runtime/lib64/
 
 rsync -ar --exclude='*.a*' --exclude='*.la*' --exclude='*.sh*' --exclude='*.h*' --exclude='ld-*' --exclude='libBrokenLocale*' --exclude='libSegFault*' -exclude='libanl*' --exclude='libc-2.24.so' --exclude='libc.so.6' --exclude='libcidn*' --exclude='libcrypt*' --exclude='libdl*' --exclude='libm-*' --exclude='libmemusage.so' --exclude='libnsl*' --exclude='libnss*' --exclude='libpcprofile.so' --exclude='libpthread*' --exclude='libresolv*' --exclude='librt*' --exclude='libthread*' --exclude='libutil*' --exclude='*.o*' /lib/x86_64-linux-gnu/ /home/runner/work/netdisk/netdisk/build-wine/runtime/lib64/ #Do not copy libc6 !

@@ -5,7 +5,7 @@ echo 'deb-src http://deb.debian.org/debian stretch-updates main' >> /etc/apt/sou
 sudo dpkg --add-architecture i386
 
 sudo apt-get update
-sudo apt-get -y install wget git
+sudo apt-get -y install wget git gcc-10 g++-10
 sudo apt-get -y build-dep wine
 
 #### 64 bits
