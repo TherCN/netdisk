@@ -15,7 +15,7 @@ cd build
 --build=aarch64-linux-gnu \
 --prefix=/data/data/com.termux/files/usr \
 --disable-multi-arch
-make -j8
+make -j16
 sudo make install DESTDIR=/home/runner/work/netdisk/netdisk/glibc
 cd ..
 tar cJvf glibc-2.36-main.tar.xz glibc
