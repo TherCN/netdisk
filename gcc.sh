@@ -1,3 +1,4 @@
+sudo apt install gcc-10 g++-10 axel -y 1>/dev/null
 axel https://ftp.gnu.org/gnu/gcc/gcc-12.1.0/gcc-12.1.0.tar.xz 1>/dev/null
 tar xf gcc-12.1.0.tar.xz
 mkdir build
