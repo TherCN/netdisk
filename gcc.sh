@@ -4,7 +4,7 @@ tar xf gcc-12.1.0.tar.xz
 mkdir build
 cd gcc-12.1.0
 bash contrib/download_prerequisites
-sed -i 's|mabi.lp64=../lib64|mabi.lp64=../lib|' gcc/config/aarch64/t-aarch64-linux
+patch -p1 < ../fix.patch
 #bash mksysroot
 #sudo ln -s aarch64-linux-gnu-gcc-10 aarch64-linux-gnu-gcc
 #sudo ln -s aarch64-linux-gnu-g++-10 aarch64-linux-gnu-g++
