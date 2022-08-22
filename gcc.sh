@@ -4,6 +4,7 @@ tar xf gcc-12.1.0.tar.xz
 mkdir build
 cd gcc-12.1.0
 bash contrib/download_prerequisites
+sed -i 's|mabi.lp64=../lib64|mabi.lp64=../lib|' gcc/config/aarch64/t-aarch64-linux
 cd ..
 #bash mksysroot
 cd /usr/bin
@@ -11,9 +12,8 @@ cd /usr/bin
 #sudo ln -s aarch64-linux-gnu-g++-10 aarch64-linux-gnu-g++
 cd $OLDPWD/build
 ../gcc-12.1.0/configure \
---prefix=/ \
+--prefix=/usr \
 --disable-multilib \
---target=x86_64-linux-gnu \
 --enable-default-pie \
 --disable-shared \
 --disable-bootstrap \
@@ -22,6 +22,7 @@ cd $OLDPWD/build
 make -j16
 sudo make install-strip DESTDIR=$HOME/gcc
 cd ..
+bash binutils.sh
 cp build/config.log glibc-gcc-optput.tar.xz
 cd $HOME
 tar cJvf glibc-gcc.tar.xz gcc
