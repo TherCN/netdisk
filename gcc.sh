@@ -7,7 +7,6 @@ bash contrib/download_prerequisites
 sed -i 's|mabi.lp64=../lib64|mabi.lp64=../lib|' gcc/config/aarch64/t-aarch64-linux
 cd ..
 #bash mksysroot
-cd /usr/bin
 #sudo ln -s aarch64-linux-gnu-gcc-10 aarch64-linux-gnu-gcc
 #sudo ln -s aarch64-linux-gnu-g++-10 aarch64-linux-gnu-g++
 cd $OLDPWD/build
@@ -21,9 +20,7 @@ cd $OLDPWD/build
 --disable-rpath
 make -j16
 sudo make install-strip DESTDIR=$HOME/gcc
-cd ..
-bash binutils.sh
-cp build/config.log glibc-gcc-optput.tar.xz
+bash /home/runner/work/netdisk/netdisk/binutils.sh
 cd $HOME
 tar cJvf glibc-gcc.tar.xz gcc
 mv glibc-gcc.tar.xz /home/runner/work/netdisk/netdisk
