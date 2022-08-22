@@ -2,15 +2,18 @@
 axel https://ftp.gnu.org/gnu/glibc/glibc-2.36.tar.gz 1>/dev/null
 tar xf glibc-2.36.tar.gz
 cd glibc-2.36
-sed -i "s|/etc/ld.so|/data/data/com.termux/files/usr/etc/ld.so|g" $(find -name "*.c")
 cd ..
 mkdir build
-for file in glibc-patch/*
-do
-patch -p0 -i $file
-done
+#for file in glibc-patch/*
+#do
+#patch -p0 -i $file
+#done
 cd build
-../glibc-2.36/configure --disable-multi-arch
+echo "slibdir=/usr/lib" >> configparms
+echo "rtlddir=/usr/lib" >> configparms
+echo "sbindir=/usr/bin" >> configparms
+echo "rootsbindir=/usr/bin" >> configparms
+../glibc-2.36/configure --disable-multi-arch --prefix=/usr
 make -j16
 sudo make install DESTDIR=/home/runner/work/netdisk/netdisk/glibc
 cd ..
