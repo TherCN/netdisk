@@ -11,6 +11,7 @@ sed -i 's|mabi.lp64=../lib64|mabi.lp64=../lib|' gcc/config/aarch64/t-aarch64-lin
 cd ../build
 ../gcc-12.1.0/configure \
 --prefix=/usr \
+--host=x86_64-linux-gnu --target=x86_64-linux-gnu \
 --disable-multilib \
 --enable-default-pie \
 --disable-shared \
