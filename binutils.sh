@@ -4,4 +4,4 @@ tar xf binutils-2.39.tar.xz
 cd binutils-2.39
 ./configure --prefix=/usr --disable-shared --enable-static --disable-rpath
 make -j16
-make install-strip DESTDIR=$HOME/gcc
+sudo make install-strip DESTDIR=$HOME/gcc
