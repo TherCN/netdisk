@@ -1,11 +1,10 @@
-proot \
+exec sudo proot \
  -0 \
  -q qemu-aarch64-static \
  -r alarm \
  -b /dev \
  -b /proc \
  -b alarm/root:/dev/shm \
- -b /sdcard \
  -w /root \
  /usr/bin/env -i \
  HOME=/root \
