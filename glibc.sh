@@ -10,11 +10,7 @@ do
 patch -p0 -i $file
 done
 cd build
-../glibc-2.36/configure \
-#--host=aarch64-linux-gnu \
-#--build=aarch64-linux-gnu \
-#--prefix=/data/data/com.termux/files/usr \
---disable-multi-arch
+../glibc-2.36/configure --disable-multi-arch
 make -j16
 sudo make install DESTDIR=/home/runner/work/netdisk/netdisk/glibc
 cd ..
