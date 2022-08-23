@@ -18,6 +18,9 @@ cd ../build
 --disable-bootstrap \
 --enable-static \
 --disable-rpath
+make all-gcc -j16 && make clean-gcc
+cd gcc
+sed "s|-lpthread|/usr/lib/x86_64-linux-pc-gnu/libpthread.a|g;s|libpthread.so.0|/usr/lib/x86_64-linux-pc-gnu/libpthread.a|g"
 make -j16
 sudo make install-strip DESTDIR=$HOME/gcc
 bash /home/runner/work/netdisk/netdisk/binutils.sh
