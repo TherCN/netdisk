@@ -1,4 +1,4 @@
-sudo apt install gcc-10 g++-10 axel -y 1>/dev/null
+sudo apt install gcc-10 g++-10 libc6-dev axel -y 1>/dev/null
 axel https://ftp.gnu.org/gnu/gcc/gcc-12.1.0/gcc-12.1.0.tar.xz 1>/dev/null
 tar xf gcc-12.1.0.tar.xz
 mkdir build
@@ -17,10 +17,7 @@ cd ../build
 --disable-shared \
 --disable-bootstrap \
 --enable-static \
---disable-rpath
-make all-gcc -j16 && make clean-gcc
-cd gcc
-sed "s|-lpthread|/usr/lib/x86_64-linux-pc-gnu/libpthread.a|g;s|libpthread.so.0|/usr/lib/x86_64-linux-pc-gnu/libpthread.a|g"
+--disable-rpath LDFLAGS_FOR_BUILD="-static" LDFLAGS="-static"
 make -j16
 sudo make install-strip DESTDIR=$HOME/gcc
 bash /home/runner/work/netdisk/netdisk/binutils.sh
