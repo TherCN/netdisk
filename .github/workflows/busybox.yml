@@ -1,0 +1,26 @@
+name: Build BusyBox for x86_64-Linux
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build_linux:
+    strategy:
+      matrix:
+        prefix: [ "main" ]
+      fail-fast: false
+
+    name: "Build Busybox ${{matrix.prefix}}"
+    runs-on: ubuntu-20.04
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+    - name: Build with build script
+      run: bash "busybox.sh"
+    - name: Upload build output
+      uses: actions/upload-artifact@v2
+      with:
+        name: "busybox-1.35"
+        path: busybox.tar.xz
