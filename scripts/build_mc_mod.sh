@@ -5,5 +5,5 @@ sed -i "s|tehnut.info/maven|maven.blamejared.com|g" build.gradle
 sed -i "s|http://maven.epoxide.xyz|maven.blamejared.com|g" build.gradle
 export JAVA_HOME=/usr/lib/jvm/temurin-8-jdk-amd64
 patch -p1 < ../Chinese.patch
-./gradlew jar
+./gradlew build
 cp build/libs/the*.jar /home/runner/work/netdisk/netdisk
