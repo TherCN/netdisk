@@ -384,19 +384,6 @@ index da5b081..cbfa5ca 100644
          } else {
              consumer.accept(args);
          }
-diff --git a/src/main/java/mcjty/theoneprobe/compat/ProbeGoggles.java b/sdcard/top/src/main/java/mcjty/theoneprobe/compat/ProbeGoggles.java
-index 35cd776..803bddc 100644
---- a/src/main/java/mcjty/theoneprobe/compat/ProbeGoggles.java
-+++ b/sdcard/top/src/main/java/mcjty/theoneprobe/compat/ProbeGoggles.java
-@@ -21,7 +21,7 @@ public class ProbeGoggles extends Item implements IBauble {
- 
-     @SideOnly(Side.CLIENT)
-     public void initModel() {
--        ModelLoader.setCustomModelResourceLocation(this, 0, new ModelResourceLocation(getRegistryName(), "inventory"));
-+        ModelLoader.setCustomModelResourceLocation(this, 0, new ModelResourceLocation(getRegistryName(), "物品栏"));
-     }
- 
-     @Override
 diff --git a/src/main/java/mcjty/theoneprobe/config/TopModConfigGui.java b/sdcard/top/src/main/java/mcjty/theoneprobe/config/TopModConfigGui.java
 index d69eeb6..eeaa061 100644
 --- a/src/main/java/mcjty/theoneprobe/config/TopModConfigGui.java
