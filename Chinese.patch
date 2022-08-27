@@ -11,19 +11,6 @@ index 5709fcb..201403b 100644
              }
          }
      }
-diff --git a/src/main/java/mcjty/theoneprobe/apiimpl/providers/BlockProbeInfoProvider.java b/sdcard/top/src/main/java/mcjty/theoneprobe/apiimpl/providers/BlockProbeInfoProvider.java
-index 823c2b4..25d1be2 100644
---- a/src/main/java/mcjty/theoneprobe/apiimpl/providers/BlockProbeInfoProvider.java
-+++ b/sdcard/top/src/main/java/mcjty/theoneprobe/apiimpl/providers/BlockProbeInfoProvider.java
-@@ -11,7 +11,7 @@ public class BlockProbeInfoProvider implements IProbeInfoProvider {
- 
-     @Override
-     public String getID() {
--        return TheOneProbe.MODID + ":block";
-+        return TheOneProbe.MODID + ":方块";
-     }
- 
-     @Override
 diff --git a/src/main/java/mcjty/theoneprobe/apiimpl/providers/ChestInfoTools.java b/sdcard/top/src/main/java/mcjty/theoneprobe/apiimpl/providers/ChestInfoTools.java
 index 68b88f6..bb72f31 100644
 --- a/src/main/java/mcjty/theoneprobe/apiimpl/providers/ChestInfoTools.java
@@ -68,18 +55,9 @@ index bbd642e..fdec341 100644
          }
      }
 diff --git a/src/main/java/mcjty/theoneprobe/apiimpl/providers/DebugProbeInfoProvider.java b/sdcard/top/src/main/java/mcjty/theoneprobe/apiimpl/providers/DebugProbeInfoProvider.java
-index 3fc593d..c75678c 100644
+index 3fc593d..6e21dcb 100644
 --- a/src/main/java/mcjty/theoneprobe/apiimpl/providers/DebugProbeInfoProvider.java
 +++ b/sdcard/top/src/main/java/mcjty/theoneprobe/apiimpl/providers/DebugProbeInfoProvider.java
-@@ -22,7 +22,7 @@ public class DebugProbeInfoProvider implements IProbeInfoProvider {
- 
-     @Override
-     public String getID() {
--        return TheOneProbe.MODID + ":debug";
-+        return TheOneProbe.MODID + ":调试";
-     }
- 
-     @Override
 @@ -37,14 +37,14 @@ public class DebugProbeInfoProvider implements IProbeInfoProvider {
      private void showDebugInfo(IProbeInfo probeInfo, World world, IBlockState blockState, BlockPos pos, Block block, EnumFacing side) {
          String simpleName = block.getClass().getSimpleName();
@@ -384,6 +362,19 @@ index da5b081..cbfa5ca 100644
          } else {
              consumer.accept(args);
          }
+diff --git a/src/main/java/mcjty/theoneprobe/compat/ProbeGoggles.java b/sdcard/top/src/main/java/mcjty/theoneprobe/compat/ProbeGoggles.java
+index 35cd776..803bddc 100644
+--- a/src/main/java/mcjty/theoneprobe/compat/ProbeGoggles.java
++++ b/sdcard/top/src/main/java/mcjty/theoneprobe/compat/ProbeGoggles.java
+@@ -21,7 +21,7 @@ public class ProbeGoggles extends Item implements IBauble {
+ 
+     @SideOnly(Side.CLIENT)
+     public void initModel() {
+-        ModelLoader.setCustomModelResourceLocation(this, 0, new ModelResourceLocation(getRegistryName(), "inventory"));
++        ModelLoader.setCustomModelResourceLocation(this, 0, new ModelResourceLocation(getRegistryName(), "物品栏"));
+     }
+ 
+     @Override
 diff --git a/src/main/java/mcjty/theoneprobe/config/TopModConfigGui.java b/sdcard/top/src/main/java/mcjty/theoneprobe/config/TopModConfigGui.java
 index d69eeb6..eeaa061 100644
 --- a/src/main/java/mcjty/theoneprobe/config/TopModConfigGui.java
