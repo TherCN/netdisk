@@ -326,7 +326,7 @@ index c4af8ea..5376480 100644
          IIconStyle iconStyle = probeInfo.defaultIconStyle().width(v ? 18 : 20).height(v ? 14 : 16).textureWidth(32).textureHeight(32);
          IProbeInfo horizontal = probeInfo.horizontal(alignment);
 +        String destoryTool = ((harvestTool != null) ? harvestTool : "没有工具");
-+        String allowDestoryTool
++        String allowDestoryTool;
 +        if (destoryTool == "Pickaxe") {
 +        allowDestoryTool = "镐";
 +        } else if (destoryTool == "Shovel") {
