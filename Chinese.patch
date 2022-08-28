@@ -265,7 +265,7 @@ index 4e27a0b..6d3ec09 100644
              }
              return;
 diff --git a/src/main/java/mcjty/theoneprobe/apiimpl/providers/HarvestInfoTools.java b/sdcard/top/src/main/java/mcjty/theoneprobe/apiimpl/providers/HarvestInfoTools.java
-index c4af8ea..3c12835 100644
+index c4af8ea..2b0abe9 100644
 --- a/src/main/java/mcjty/theoneprobe/apiimpl/providers/HarvestInfoTools.java
 +++ b/sdcard/top/src/main/java/mcjty/theoneprobe/apiimpl/providers/HarvestInfoTools.java
 @@ -27,18 +27,18 @@ public class HarvestInfoTools {
@@ -346,7 +346,7 @@ index c4af8ea..3c12835 100644
              } else {
                  horizontal.icon(ICONS, 16, offs, dim, dim, iconStyle)
 -                        .text(WARNING + ((harvestTool != null) ? harvestTool : "No tool") + " (level " + harvestName + ")");
-+                        .text(WARNING + destoryTool + " (挖掘等级 " + harvestName + ")");
++                        .text(WARNING + destoryTool + harvestTool + "(挖掘等级 " + harvestName + ")");
              }
          }
      }
