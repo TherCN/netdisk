@@ -1,6 +1,100 @@
-diff --git a/src/main/java/mcjty/theoneprobe/api/TextStyleClass.java b/sdcard/top/src/main/java/mcjty/theoneprobe/api/TextStyleClass.java
+diff --git a/data/data/com.termux/files/home/TheOneProbe/.git/config b/sdcard/top/.git/config
+index f682c88..5969cf3 100644
+--- a/data/data/com.termux/files/home/TheOneProbe/.git/config
++++ b/sdcard/top/.git/config
+@@ -1,8 +1,10 @@
+ [core]
+ 	repositoryformatversion = 0
+-	filemode = true
++	filemode = false
+ 	bare = false
+ 	logallrefupdates = true
++	symlinks = false
++	ignorecase = true
+ [remote "origin"]
+ 	url = https://github.com/McJtyMods/TheOneProbe
+ 	fetch = +refs/heads/*:refs/remotes/origin/*
+diff --git a/data/data/com.termux/files/home/TheOneProbe/.git/hooks/applypatch-msg.sample b/sdcard/top/.git/hooks/applypatch-msg.sample
+old mode 100755
+new mode 100644
+diff --git a/data/data/com.termux/files/home/TheOneProbe/.git/hooks/commit-msg.sample b/sdcard/top/.git/hooks/commit-msg.sample
+old mode 100755
+new mode 100644
+diff --git a/data/data/com.termux/files/home/TheOneProbe/.git/hooks/fsmonitor-watchman.sample b/sdcard/top/.git/hooks/fsmonitor-watchman.sample
+old mode 100755
+new mode 100644
+diff --git a/data/data/com.termux/files/home/TheOneProbe/.git/hooks/post-update.sample b/sdcard/top/.git/hooks/post-update.sample
+old mode 100755
+new mode 100644
+diff --git a/data/data/com.termux/files/home/TheOneProbe/.git/hooks/pre-applypatch.sample b/sdcard/top/.git/hooks/pre-applypatch.sample
+old mode 100755
+new mode 100644
+diff --git a/data/data/com.termux/files/home/TheOneProbe/.git/hooks/pre-commit.sample b/sdcard/top/.git/hooks/pre-commit.sample
+old mode 100755
+new mode 100644
+diff --git a/data/data/com.termux/files/home/TheOneProbe/.git/hooks/pre-merge-commit.sample b/sdcard/top/.git/hooks/pre-merge-commit.sample
+old mode 100755
+new mode 100644
+diff --git a/data/data/com.termux/files/home/TheOneProbe/.git/hooks/pre-push.sample b/sdcard/top/.git/hooks/pre-push.sample
+old mode 100755
+new mode 100644
+diff --git a/data/data/com.termux/files/home/TheOneProbe/.git/hooks/pre-rebase.sample b/sdcard/top/.git/hooks/pre-rebase.sample
+old mode 100755
+new mode 100644
+diff --git a/data/data/com.termux/files/home/TheOneProbe/.git/hooks/pre-receive.sample b/sdcard/top/.git/hooks/pre-receive.sample
+old mode 100755
+new mode 100644
+diff --git a/data/data/com.termux/files/home/TheOneProbe/.git/hooks/prepare-commit-msg.sample b/sdcard/top/.git/hooks/prepare-commit-msg.sample
+old mode 100755
+new mode 100644
+diff --git a/data/data/com.termux/files/home/TheOneProbe/.git/hooks/push-to-checkout.sample b/sdcard/top/.git/hooks/push-to-checkout.sample
+old mode 100755
+new mode 100644
+diff --git a/data/data/com.termux/files/home/TheOneProbe/.git/hooks/update.sample b/sdcard/top/.git/hooks/update.sample
+old mode 100755
+new mode 100644
+diff --git a/data/data/com.termux/files/home/TheOneProbe/.git/index b/sdcard/top/.git/index
+index c825619..896e8b3 100644
+Binary files a/data/data/com.termux/files/home/TheOneProbe/.git/index and b/sdcard/top/.git/index differ
+diff --git a/data/data/com.termux/files/home/TheOneProbe/.git/logs/HEAD b/sdcard/top/.git/logs/HEAD
+index 1138bf5..43635b9 100644
+--- a/data/data/com.termux/files/home/TheOneProbe/.git/logs/HEAD
++++ b/sdcard/top/.git/logs/HEAD
+@@ -1 +1 @@
+-0000000000000000000000000000000000000000 f4797f1a7f1349ab71ac85e667517117a8a8d51a Ther CN <b1431736437@163.com> 1661577335 +0800	clone: from https://github.com/McJtyMods/TheOneProbe
++0000000000000000000000000000000000000000 f4797f1a7f1349ab71ac85e667517117a8a8d51a Ther CN <b1431736437@163.com> 1661551451 +0800	clone: from https://github.com/McJtyMods/TheOneProbe
+diff --git a/data/data/com.termux/files/home/TheOneProbe/.git/logs/refs/heads/1.12 b/sdcard/top/.git/logs/refs/heads/1.12
+index 1138bf5..43635b9 100644
+--- a/data/data/com.termux/files/home/TheOneProbe/.git/logs/refs/heads/1.12
++++ b/sdcard/top/.git/logs/refs/heads/1.12
+@@ -1 +1 @@
+-0000000000000000000000000000000000000000 f4797f1a7f1349ab71ac85e667517117a8a8d51a Ther CN <b1431736437@163.com> 1661577335 +0800	clone: from https://github.com/McJtyMods/TheOneProbe
++0000000000000000000000000000000000000000 f4797f1a7f1349ab71ac85e667517117a8a8d51a Ther CN <b1431736437@163.com> 1661551451 +0800	clone: from https://github.com/McJtyMods/TheOneProbe
+diff --git a/data/data/com.termux/files/home/TheOneProbe/.git/logs/refs/remotes/origin/HEAD b/sdcard/top/.git/logs/refs/remotes/origin/HEAD
+index 60f58ba..e1a1925 100644
+--- a/data/data/com.termux/files/home/TheOneProbe/.git/logs/refs/remotes/origin/HEAD
++++ b/sdcard/top/.git/logs/refs/remotes/origin/HEAD
+@@ -1 +1 @@
+-0000000000000000000000000000000000000000 3ebf70cb1730465dfea82ac785186e76b63f1467 Ther CN <b1431736437@163.com> 1661577335 +0800	clone: from https://github.com/McJtyMods/TheOneProbe
++0000000000000000000000000000000000000000 3ebf70cb1730465dfea82ac785186e76b63f1467 Ther CN <b1431736437@163.com> 1661551451 +0800	clone: from https://github.com/McJtyMods/TheOneProbe
+diff --git a/data/data/com.termux/files/home/TheOneProbe/.git/objects/pack/pack-60e0ed13a24db873b24b2e27192341c99acdf46f.idx b/sdcard/top/.git/objects/pack/pack-5b38295d11b7fd6d283d54164080d75e6c642afa.idx
+similarity index 81%
+rename from /data/data/com.termux/files/home/TheOneProbe/.git/objects/pack/pack-60e0ed13a24db873b24b2e27192341c99acdf46f.idx
+rename to /sdcard/top/.git/objects/pack/pack-5b38295d11b7fd6d283d54164080d75e6c642afa.idx
+index f138fd9..89a37bc 100644
+Binary files a/data/data/com.termux/files/home/TheOneProbe/.git/objects/pack/pack-60e0ed13a24db873b24b2e27192341c99acdf46f.idx and b/sdcard/top/.git/objects/pack/pack-5b38295d11b7fd6d283d54164080d75e6c642afa.idx differ
+diff --git a/data/data/com.termux/files/home/TheOneProbe/.git/objects/pack/pack-60e0ed13a24db873b24b2e27192341c99acdf46f.pack b/sdcard/top/.git/objects/pack/pack-5b38295d11b7fd6d283d54164080d75e6c642afa.pack
+similarity index 98%
+rename from /data/data/com.termux/files/home/TheOneProbe/.git/objects/pack/pack-60e0ed13a24db873b24b2e27192341c99acdf46f.pack
+rename to /sdcard/top/.git/objects/pack/pack-5b38295d11b7fd6d283d54164080d75e6c642afa.pack
+index 4237b8e..79ab208 100644
+Binary files a/data/data/com.termux/files/home/TheOneProbe/.git/objects/pack/pack-60e0ed13a24db873b24b2e27192341c99acdf46f.pack and b/sdcard/top/.git/objects/pack/pack-5b38295d11b7fd6d283d54164080d75e6c642afa.pack differ
+diff --git a/data/data/com.termux/files/home/TheOneProbe/gradlew b/sdcard/top/gradlew
+old mode 100755
+new mode 100644
+diff --git a/data/data/com.termux/files/home/TheOneProbe/src/main/java/mcjty/theoneprobe/api/TextStyleClass.java b/sdcard/top/src/main/java/mcjty/theoneprobe/api/TextStyleClass.java
 index 24631d0..5415890 100644
---- a/src/main/java/mcjty/theoneprobe/api/TextStyleClass.java
+--- a/data/data/com.termux/files/home/TheOneProbe/src/main/java/mcjty/theoneprobe/api/TextStyleClass.java
 +++ b/sdcard/top/src/main/java/mcjty/theoneprobe/api/TextStyleClass.java
 @@ -6,16 +6,16 @@ package mcjty.theoneprobe.api;
   * probeInfo.text(TextStyleClass.ERROR + "Error! World will explode in 5 seconds!");
@@ -28,9 +122,9 @@ index 24631d0..5415890 100644
  
      private final String code;
      private final String readableName;
-diff --git a/src/main/java/mcjty/theoneprobe/apiimpl/client/ElementItemStackRender.java b/sdcard/top/src/main/java/mcjty/theoneprobe/apiimpl/client/ElementItemStackRender.java
+diff --git a/data/data/com.termux/files/home/TheOneProbe/src/main/java/mcjty/theoneprobe/apiimpl/client/ElementItemStackRender.java b/sdcard/top/src/main/java/mcjty/theoneprobe/apiimpl/client/ElementItemStackRender.java
 index 5709fcb..201403b 100644
---- a/src/main/java/mcjty/theoneprobe/apiimpl/client/ElementItemStackRender.java
+--- a/data/data/com.termux/files/home/TheOneProbe/src/main/java/mcjty/theoneprobe/apiimpl/client/ElementItemStackRender.java
 +++ b/sdcard/top/src/main/java/mcjty/theoneprobe/apiimpl/client/ElementItemStackRender.java
 @@ -29,7 +29,7 @@ public class ElementItemStackRender {
  
@@ -41,9 +135,9 @@ index 5709fcb..201403b 100644
              }
          }
      }
-diff --git a/src/main/java/mcjty/theoneprobe/apiimpl/providers/ChestInfoTools.java b/sdcard/top/src/main/java/mcjty/theoneprobe/apiimpl/providers/ChestInfoTools.java
+diff --git a/data/data/com.termux/files/home/TheOneProbe/src/main/java/mcjty/theoneprobe/apiimpl/providers/ChestInfoTools.java b/sdcard/top/src/main/java/mcjty/theoneprobe/apiimpl/providers/ChestInfoTools.java
 index 68b88f6..bb72f31 100644
---- a/src/main/java/mcjty/theoneprobe/apiimpl/providers/ChestInfoTools.java
+--- a/data/data/com.termux/files/home/TheOneProbe/src/main/java/mcjty/theoneprobe/apiimpl/providers/ChestInfoTools.java
 +++ b/sdcard/top/src/main/java/mcjty/theoneprobe/apiimpl/providers/ChestInfoTools.java
 @@ -129,7 +129,7 @@ public class ChestInfoTools {
                  }
@@ -54,9 +148,9 @@ index 68b88f6..bb72f31 100644
          }
          return maxSlots;
      }
-diff --git a/src/main/java/mcjty/theoneprobe/apiimpl/providers/DebugProbeInfoEntityProvider.java b/sdcard/top/src/main/java/mcjty/theoneprobe/apiimpl/providers/DebugProbeInfoEntityProvider.java
+diff --git a/data/data/com.termux/files/home/TheOneProbe/src/main/java/mcjty/theoneprobe/apiimpl/providers/DebugProbeInfoEntityProvider.java b/sdcard/top/src/main/java/mcjty/theoneprobe/apiimpl/providers/DebugProbeInfoEntityProvider.java
 index bbd642e..fdec341 100644
---- a/src/main/java/mcjty/theoneprobe/apiimpl/providers/DebugProbeInfoEntityProvider.java
+--- a/data/data/com.termux/files/home/TheOneProbe/src/main/java/mcjty/theoneprobe/apiimpl/providers/DebugProbeInfoEntityProvider.java
 +++ b/sdcard/top/src/main/java/mcjty/theoneprobe/apiimpl/providers/DebugProbeInfoEntityProvider.java
 @@ -37,11 +37,11 @@ public class DebugProbeInfoEntityProvider implements IProbeInfoEntityProvider {
                  float aiMoveSpeed = entityLivingBase.getAIMoveSpeed();
@@ -84,9 +178,9 @@ index bbd642e..fdec341 100644
              }
          }
      }
-diff --git a/src/main/java/mcjty/theoneprobe/apiimpl/providers/DebugProbeInfoProvider.java b/sdcard/top/src/main/java/mcjty/theoneprobe/apiimpl/providers/DebugProbeInfoProvider.java
+diff --git a/data/data/com.termux/files/home/TheOneProbe/src/main/java/mcjty/theoneprobe/apiimpl/providers/DebugProbeInfoProvider.java b/sdcard/top/src/main/java/mcjty/theoneprobe/apiimpl/providers/DebugProbeInfoProvider.java
 index 3fc593d..6e21dcb 100644
---- a/src/main/java/mcjty/theoneprobe/apiimpl/providers/DebugProbeInfoProvider.java
+--- a/data/data/com.termux/files/home/TheOneProbe/src/main/java/mcjty/theoneprobe/apiimpl/providers/DebugProbeInfoProvider.java
 +++ b/sdcard/top/src/main/java/mcjty/theoneprobe/apiimpl/providers/DebugProbeInfoProvider.java
 @@ -37,14 +37,14 @@ public class DebugProbeInfoProvider implements IProbeInfoProvider {
      private void showDebugInfo(IProbeInfo probeInfo, World world, IBlockState blockState, BlockPos pos, Block block, EnumFacing side) {
@@ -110,9 +204,9 @@ index 3fc593d..6e21dcb 100644
          TileEntity te = world.getTileEntity(pos);
          if (te != null) {
              vertical.text(LABEL + "TE: " + INFO + te.getClass().getSimpleName());
-diff --git a/src/main/java/mcjty/theoneprobe/apiimpl/providers/DefaultProbeInfoEntityProvider.java b/sdcard/top/src/main/java/mcjty/theoneprobe/apiimpl/providers/DefaultProbeInfoEntityProvider.java
+diff --git a/data/data/com.termux/files/home/TheOneProbe/src/main/java/mcjty/theoneprobe/apiimpl/providers/DefaultProbeInfoEntityProvider.java b/sdcard/top/src/main/java/mcjty/theoneprobe/apiimpl/providers/DefaultProbeInfoEntityProvider.java
 index 5af19c9..43dba7d 100644
---- a/src/main/java/mcjty/theoneprobe/apiimpl/providers/DefaultProbeInfoEntityProvider.java
+--- a/data/data/com.termux/files/home/TheOneProbe/src/main/java/mcjty/theoneprobe/apiimpl/providers/DefaultProbeInfoEntityProvider.java
 +++ b/sdcard/top/src/main/java/mcjty/theoneprobe/apiimpl/providers/DefaultProbeInfoEntityProvider.java
 @@ -68,7 +68,7 @@ public class DefaultProbeInfoEntityProvider implements IProbeInfoEntityProvider
                  probeInfo.progress(health, maxHealth, probeInfo.defaultProgressStyle().lifeBar(true).showText(false).width(150).height(10));
@@ -181,9 +275,9 @@ index 5af19c9..43dba7d 100644
              }
          }
      }
-diff --git a/src/main/java/mcjty/theoneprobe/apiimpl/providers/DefaultProbeInfoProvider.java b/sdcard/top/src/main/java/mcjty/theoneprobe/apiimpl/providers/DefaultProbeInfoProvider.java
+diff --git a/data/data/com.termux/files/home/TheOneProbe/src/main/java/mcjty/theoneprobe/apiimpl/providers/DefaultProbeInfoProvider.java b/sdcard/top/src/main/java/mcjty/theoneprobe/apiimpl/providers/DefaultProbeInfoProvider.java
 index 4e27a0b..6d3ec09 100644
---- a/src/main/java/mcjty/theoneprobe/apiimpl/providers/DefaultProbeInfoProvider.java
+--- a/data/data/com.termux/files/home/TheOneProbe/src/main/java/mcjty/theoneprobe/apiimpl/providers/DefaultProbeInfoProvider.java
 +++ b/sdcard/top/src/main/java/mcjty/theoneprobe/apiimpl/providers/DefaultProbeInfoProvider.java
 @@ -111,9 +111,9 @@ public class DefaultProbeInfoProvider implements IProbeInfoProvider {
                  int fuel = ((TileEntityBrewingStand) te).getField(1);
@@ -264,9 +358,9 @@ index 4e27a0b..6d3ec09 100644
                  }
              }
              return;
-diff --git a/src/main/java/mcjty/theoneprobe/apiimpl/providers/HarvestInfoTools.java b/sdcard/top/src/main/java/mcjty/theoneprobe/apiimpl/providers/HarvestInfoTools.java
+diff --git a/data/data/com.termux/files/home/TheOneProbe/src/main/java/mcjty/theoneprobe/apiimpl/providers/HarvestInfoTools.java b/sdcard/top/src/main/java/mcjty/theoneprobe/apiimpl/providers/HarvestInfoTools.java
 index c4af8ea..8559e88 100644
---- a/src/main/java/mcjty/theoneprobe/apiimpl/providers/HarvestInfoTools.java
+--- a/data/data/com.termux/files/home/TheOneProbe/src/main/java/mcjty/theoneprobe/apiimpl/providers/HarvestInfoTools.java
 +++ b/sdcard/top/src/main/java/mcjty/theoneprobe/apiimpl/providers/HarvestInfoTools.java
 @@ -27,23 +27,23 @@ public class HarvestInfoTools {
  
@@ -369,9 +463,9 @@ index c4af8ea..8559e88 100644
              }
          }
      }
-diff --git a/src/main/java/mcjty/theoneprobe/commands/CommandTopCfg.java b/sdcard/top/src/main/java/mcjty/theoneprobe/commands/CommandTopCfg.java
+diff --git a/data/data/com.termux/files/home/TheOneProbe/src/main/java/mcjty/theoneprobe/commands/CommandTopCfg.java b/sdcard/top/src/main/java/mcjty/theoneprobe/commands/CommandTopCfg.java
 index da5b081..cbfa5ca 100644
---- a/src/main/java/mcjty/theoneprobe/commands/CommandTopCfg.java
+--- a/data/data/com.termux/files/home/TheOneProbe/src/main/java/mcjty/theoneprobe/commands/CommandTopCfg.java
 +++ b/sdcard/top/src/main/java/mcjty/theoneprobe/commands/CommandTopCfg.java
 @@ -39,25 +39,25 @@ public class CommandTopCfg implements ICommand {
      private static Map<String,Consumer<String[]>> SUBCOMMANDS = new HashMap<>();
@@ -427,9 +521,9 @@ index da5b081..cbfa5ca 100644
          } else {
              consumer.accept(args);
          }
-diff --git a/src/main/java/mcjty/theoneprobe/compat/ProbeGoggles.java b/sdcard/top/src/main/java/mcjty/theoneprobe/compat/ProbeGoggles.java
+diff --git a/data/data/com.termux/files/home/TheOneProbe/src/main/java/mcjty/theoneprobe/compat/ProbeGoggles.java b/sdcard/top/src/main/java/mcjty/theoneprobe/compat/ProbeGoggles.java
 index 35cd776..803bddc 100644
---- a/src/main/java/mcjty/theoneprobe/compat/ProbeGoggles.java
+--- a/data/data/com.termux/files/home/TheOneProbe/src/main/java/mcjty/theoneprobe/compat/ProbeGoggles.java
 +++ b/sdcard/top/src/main/java/mcjty/theoneprobe/compat/ProbeGoggles.java
 @@ -21,7 +21,7 @@ public class ProbeGoggles extends Item implements IBauble {
  
@@ -440,9 +534,9 @@ index 35cd776..803bddc 100644
      }
  
      @Override
-diff --git a/src/main/java/mcjty/theoneprobe/config/TopModConfigGui.java b/sdcard/top/src/main/java/mcjty/theoneprobe/config/TopModConfigGui.java
+diff --git a/data/data/com.termux/files/home/TheOneProbe/src/main/java/mcjty/theoneprobe/config/TopModConfigGui.java b/sdcard/top/src/main/java/mcjty/theoneprobe/config/TopModConfigGui.java
 index d69eeb6..eeaa061 100644
---- a/src/main/java/mcjty/theoneprobe/config/TopModConfigGui.java
+--- a/data/data/com.termux/files/home/TheOneProbe/src/main/java/mcjty/theoneprobe/config/TopModConfigGui.java
 +++ b/sdcard/top/src/main/java/mcjty/theoneprobe/config/TopModConfigGui.java
 @@ -9,6 +9,6 @@ public class TopModConfigGui extends GuiConfig {
  
@@ -452,9 +546,9 @@ index d69eeb6..eeaa061 100644
 +                TheOneProbe.MODID, false, false, "The One Probe配置");
      }
  }
-diff --git a/src/main/java/mcjty/theoneprobe/gui/GuiConfig.java b/sdcard/top/src/main/java/mcjty/theoneprobe/gui/GuiConfig.java
+diff --git a/data/data/com.termux/files/home/TheOneProbe/src/main/java/mcjty/theoneprobe/gui/GuiConfig.java b/sdcard/top/src/main/java/mcjty/theoneprobe/gui/GuiConfig.java
 index 7f2132b..6036891 100644
---- a/src/main/java/mcjty/theoneprobe/gui/GuiConfig.java
+--- a/data/data/com.termux/files/home/TheOneProbe/src/main/java/mcjty/theoneprobe/gui/GuiConfig.java
 +++ b/sdcard/top/src/main/java/mcjty/theoneprobe/gui/GuiConfig.java
 @@ -40,10 +40,10 @@ public class GuiConfig extends GuiScreen {
      private List<HitBox> hitboxes = Collections.emptyList();
@@ -513,9 +607,9 @@ index 7f2132b..6036891 100644
  
          renderElements(probeInfo, ConfigSetup.getDefaultOverlayStyle());
      }
-diff --git a/src/main/java/mcjty/theoneprobe/gui/GuiNote.java b/sdcard/top/src/main/java/mcjty/theoneprobe/gui/GuiNote.java
+diff --git a/data/data/com.termux/files/home/TheOneProbe/src/main/java/mcjty/theoneprobe/gui/GuiNote.java b/sdcard/top/src/main/java/mcjty/theoneprobe/gui/GuiNote.java
 index b0721da..9f450d2 100644
---- a/src/main/java/mcjty/theoneprobe/gui/GuiNote.java
+--- a/data/data/com.termux/files/home/TheOneProbe/src/main/java/mcjty/theoneprobe/gui/GuiNote.java
 +++ b/sdcard/top/src/main/java/mcjty/theoneprobe/gui/GuiNote.java
 @@ -112,13 +112,13 @@ public class GuiNote extends GuiScreen {
          hitY = y + guiTop;
@@ -534,9 +628,9 @@ index b0721da..9f450d2 100644
  
          y += BUTTON_HEIGHT - 4;
          return y;
-diff --git a/src/main/java/mcjty/theoneprobe/rendering/OverlayRenderer.java b/sdcard/top/src/main/java/mcjty/theoneprobe/rendering/OverlayRenderer.java
+diff --git a/data/data/com.termux/files/home/TheOneProbe/src/main/java/mcjty/theoneprobe/rendering/OverlayRenderer.java b/sdcard/top/src/main/java/mcjty/theoneprobe/rendering/OverlayRenderer.java
 index 2d9dddf..0dbdae9 100644
---- a/src/main/java/mcjty/theoneprobe/rendering/OverlayRenderer.java
+--- a/data/data/com.termux/files/home/TheOneProbe/src/main/java/mcjty/theoneprobe/rendering/OverlayRenderer.java
 +++ b/sdcard/top/src/main/java/mcjty/theoneprobe/rendering/OverlayRenderer.java
 @@ -226,10 +226,10 @@ public class OverlayRenderer {
              float damage = Minecraft.getMinecraft().playerController.curBlockDamageMP;
