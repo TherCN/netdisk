@@ -297,7 +297,7 @@ index c4af8ea..8559e88 100644
      static void showHarvestLevel(IProbeInfo probeInfo, IBlockState blockState, Block block) {
          String harvestTool = block.getHarvestTool(blockState);
 -        if (harvestTool != null) {
-+        if (harvestTool = "Shovel") {
++        if (harvestTool == "Shovel") {
              int harvestLevel = block.getHarvestLevel(blockState);
              String harvestName;
              if (harvestLevel >= harvestLevels.length) {
@@ -309,7 +309,7 @@ index c4af8ea..8559e88 100644
 -        }
 +            probeInfo.text(LABEL + "工具: " + INFO + "铲" + " (挖掘等级: " + harvestName + ")");
 +	}
-+	if (harvestTool = "Axe") {
++	if (harvestTool == "Axe") {
 +            int harvestLevel = block.getHarvestLevel(blockState);
 +            String harvestName;
 +            if (harvestLevel >= harvestLevels.length) {
@@ -321,7 +321,7 @@ index c4af8ea..8559e88 100644
 +            }
 +            probeInfo.text(LABEL + "工具: " + INFO + "斧" + " (挖掘等级: " + harvestName + ")");
 +	}
-+        if (harvestTool = "Pickaxe") {
++        if (harvestTool == "Pickaxe") {
 +            int harvestLevel = block.getHarvestLevel(blockState);
 +            String harvestName;
 +            if (harvestLevel >= harvestLevels.length) {
