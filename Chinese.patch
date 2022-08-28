@@ -1,3 +1,33 @@
+diff --git a/src/main/java/mcjty/theoneprobe/api/TextStyleClass.java b/sdcard/top/src/main/java/mcjty/theoneprobe/api/TextStyleClass.java
+index 24631d0..5415890 100644
+--- a/src/main/java/mcjty/theoneprobe/api/TextStyleClass.java
++++ b/sdcard/top/src/main/java/mcjty/theoneprobe/api/TextStyleClass.java
+@@ -6,16 +6,16 @@ package mcjty.theoneprobe.api;
+  * probeInfo.text(TextStyleClass.ERROR + "Error! World will explode in 5 seconds!");
+  */
+ public enum TextStyleClass {
+-    MODNAME("m", "ModName"),         // Name of the mod
+-    NAME("n", "Name"),               // Name of the block or entity
+-    INFO("i", "Info"),               // General info, neutral
+-    INFOIMP("I", "InfoImportant"),   // General info, important
+-    WARNING("w", "Warning"),         // Warning, something is not ready (not mature), or missing stuff
+-    ERROR("e", "Error"),             // Error, bad situation, out of power, things like that
+-    OBSOLETE("O", "Obsolete"),       // Obsolete, deprecated, old information
+-    LABEL("l", "Label"),             // A label, use the 'context' code to set the same as the style that follows
++    MODNAME("m", "Mod名称"),         // Name of the mod
++    NAME("n", "名称"),               // Name of the block or entity
++    INFO("i", "信息"),               // General info, neutral
++    INFOIMP("I", "重要信息"),   // General info, important
++    WARNING("w", "警告"),         // Warning, something is not ready (not mature), or missing stuff
++    ERROR("e", "错误"),             // Error, bad situation, out of power, things like that
++    OBSOLETE("O", "过时"),       // Obsolete, deprecated, old information
++    LABEL("l", "标签"),             // A label, use the 'context' code to set the same as the style that follows
+     OK("o", "Ok"),                   // Status ok
+-    PROGRESS("p", "Progress");       // Progress rendering in case the bar is not used
++    PROGRESS("p", "进度");       // Progress rendering in case the bar is not used
+ 
+     private final String code;
+     private final String readableName;
 diff --git a/src/main/java/mcjty/theoneprobe/apiimpl/client/ElementItemStackRender.java b/sdcard/top/src/main/java/mcjty/theoneprobe/apiimpl/client/ElementItemStackRender.java
 index 5709fcb..201403b 100644
 --- a/src/main/java/mcjty/theoneprobe/apiimpl/client/ElementItemStackRender.java
@@ -235,10 +265,10 @@ index 4e27a0b..6d3ec09 100644
              }
              return;
 diff --git a/src/main/java/mcjty/theoneprobe/apiimpl/providers/HarvestInfoTools.java b/sdcard/top/src/main/java/mcjty/theoneprobe/apiimpl/providers/HarvestInfoTools.java
-index c4af8ea..18aa018 100644
+index c4af8ea..3022da9 100644
 --- a/src/main/java/mcjty/theoneprobe/apiimpl/providers/HarvestInfoTools.java
 +++ b/sdcard/top/src/main/java/mcjty/theoneprobe/apiimpl/providers/HarvestInfoTools.java
-@@ -27,18 +27,18 @@ public class HarvestInfoTools {
+@@ -27,23 +27,23 @@ public class HarvestInfoTools {
  
      private static final ResourceLocation ICONS = new ResourceLocation(TheOneProbe.MODID, "textures/gui/icons.png");
      private static String[] harvestLevels = new String[]{
@@ -265,16 +295,49 @@ index c4af8ea..18aa018 100644
      }
  
      static void showHarvestLevel(IProbeInfo probeInfo, IBlockState blockState, Block block) {
-@@ -53,7 +53,7 @@ public class HarvestInfoTools {
+         String harvestTool = block.getHarvestTool(blockState);
+-        if (harvestTool != null) {
++        if (harvestTool = "Shovel") {
+             int harvestLevel = block.getHarvestLevel(blockState);
+             String harvestName;
+             if (harvestLevel >= harvestLevels.length) {
+@@ -53,10 +53,33 @@ public class HarvestInfoTools {
              } else {
                  harvestName = harvestLevels[harvestLevel];
              }
 -            probeInfo.text(LABEL + "Tool: " + INFO + harvestTool + " (level " + harvestName + ")");
-+            probeInfo.text(LABEL + "工具: " + INFO + harvestTool + " (挖掘等级l " + harvestName + ")");
-         }
+-        }
++            probeInfo.text(LABEL + "工具: " + INFO + "铲" + " (挖掘等级: " + harvestName + ")");
++	else	if (harvestTool = "Axe") {
++            int harvestLevel = block.getHarvestLevel(blockState);
++            String harvestName;
++            if (harvestLevel >= harvestLevels.length) {
++                harvestName = Integer.toString(harvestLevel);
++            } else if (harvestLevel < 0) {
++                harvestName = Integer.toString(harvestLevel);
++            } else {
++                harvestName = harvestLevels[harvestLevel];
++            }
++            probeInfo.text(LABEL + "工具: " + INFO + "斧" + " (挖掘等级: " + harvestName + ")");
++        else	if (harvestTool = "Pickaxe") {
++            int harvestLevel = block.getHarvestLevel(blockState);
++            String harvestName;
++            if (harvestLevel >= harvestLevels.length) {
++                harvestName = Integer.toString(harvestLevel);
++            } else if (harvestLevel < 0) {
++                harvestName = Integer.toString(harvestLevel);
++            } else {
++                harvestName = harvestLevels[harvestLevel];
++            }
++            probeInfo.text(LABEL + "工具: " + INFO + "镐" + " (挖掘等级: " + harvestName + ")");
++	}
      }
  
-@@ -66,9 +66,9 @@ public class HarvestInfoTools {
++
+     static void showCanBeHarvested(IProbeInfo probeInfo, World world, BlockPos pos, Block block, EntityPlayer player) {
+         if (ModItems.isProbeInHand(player.getHeldItemMainhand())) {
+             // If the player holds the probe there is no need to show harvestability information as the
+@@ -66,9 +89,9 @@ public class HarvestInfoTools {
  
          boolean harvestable = block.canHarvestBlock(world, pos, player) && world.getBlockState(pos).getBlockHardness(world, pos) >= 0;
          if (harvestable) {
@@ -286,7 +349,7 @@ index c4af8ea..18aa018 100644
          }
      }
  
-@@ -121,14 +121,14 @@ public class HarvestInfoTools {
+@@ -121,14 +144,14 @@ public class HarvestInfoTools {
          IProbeInfo horizontal = probeInfo.horizontal(alignment);
          if (harvestable) {
              horizontal.icon(ICONS, 0, offs, dim, dim, iconStyle)
@@ -469,3 +532,33 @@ index b0721da..9f450d2 100644
  
          y += BUTTON_HEIGHT - 4;
          return y;
+diff --git a/src/main/java/mcjty/theoneprobe/rendering/OverlayRenderer.java b/sdcard/top/src/main/java/mcjty/theoneprobe/rendering/OverlayRenderer.java
+index 2d9dddf..0dbdae9 100644
+--- a/src/main/java/mcjty/theoneprobe/rendering/OverlayRenderer.java
++++ b/sdcard/top/src/main/java/mcjty/theoneprobe/rendering/OverlayRenderer.java
+@@ -226,10 +226,10 @@ public class OverlayRenderer {
+             float damage = Minecraft.getMinecraft().playerController.curBlockDamageMP;
+             if (damage > 0) {
+                 if (ConfigSetup.showBreakProgress == 2) {
+-                    damageElement = new ElementText("" + TextFormatting.RED + "Progress " + (int) (damage * 100) + "%");
++                    damageElement = new ElementText("" + TextFormatting.RED + "进度:" + (int) (damage * 100) + "%");
+                 } else {
+                     damageElement = new ElementProgress((long) (damage * 100), 100, new ProgressStyle()
+-                            .prefix("Progress ")
++                            .prefix("进度:")
+                             .suffix("%")
+                             .width(85)
+                             .borderColor(0)
+@@ -296,10 +296,10 @@ public class OverlayRenderer {
+             DefaultProbeInfoProvider.showStandardBlockInfo(probeConfig, mode, probeInfo, blockState, block, world, blockPos, player, data);
+         } catch (Exception e) {
+             ThrowableIdentity.registerThrowable(e);
+-            probeInfo.text(ERROR + "Error (see log for details)!");
++            probeInfo.text(ERROR + "错误!(从日志查看详细信息)");
+         }
+ 
+-        probeInfo.text(ERROR + "Waiting for server...");
++        probeInfo.text(ERROR + "等待服务器...");
+         return probeInfo;
+     }
+ 
