@@ -265,7 +265,7 @@ index 4e27a0b..6d3ec09 100644
              }
              return;
 diff --git a/src/main/java/mcjty/theoneprobe/apiimpl/providers/HarvestInfoTools.java b/sdcard/top/src/main/java/mcjty/theoneprobe/apiimpl/providers/HarvestInfoTools.java
-index c4af8ea..2b0abe9 100644
+index c4af8ea..a8936cc 100644
 --- a/src/main/java/mcjty/theoneprobe/apiimpl/providers/HarvestInfoTools.java
 +++ b/sdcard/top/src/main/java/mcjty/theoneprobe/apiimpl/providers/HarvestInfoTools.java
 @@ -27,18 +27,18 @@ public class HarvestInfoTools {
@@ -321,19 +321,20 @@ index c4af8ea..2b0abe9 100644
          }
      }
  
-@@ -119,16 +120,25 @@ public class HarvestInfoTools {
+@@ -119,16 +120,26 @@ public class HarvestInfoTools {
          ILayoutStyle alignment = probeInfo.defaultLayoutStyle().alignment(ElementAlignment.ALIGN_CENTER);
          IIconStyle iconStyle = probeInfo.defaultIconStyle().width(v ? 18 : 20).height(v ? 14 : 16).textureWidth(32).textureHeight(32);
          IProbeInfo horizontal = probeInfo.horizontal(alignment);
 +        String destoryTool;
-+        destoryTool = "没有工具";
-+        if (harvestTool == "Pickaxe") {
++        if (harvestTool.equals("Pickaxe")) {
 +        destoryTool = "镐";
-+        } else if (harvestTool == "Shovel") {
++        } else if (harvestTool.equals("Shovel")) {
 +        destoryTool = "铲";
-+        } else if (harvestTool == "Axe") {
++        } else if (harvestTool.equals("Axe")) {
 +        destoryTool = "斧";
-+        } 
++        } else {
++        destoryTool = harvestTool;
++        }
          if (harvestable) {
              horizontal.icon(ICONS, 0, offs, dim, dim, iconStyle)
 -                    .text(OK + ((harvestTool != null) ? harvestTool : "No tool"));
