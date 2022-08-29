@@ -8,4 +8,4 @@ patch -p1 < ../Chinese.patch
 ./gradlew build
 cp build/libs/*.jar ../
 cd ..
-mv .gradle theoneprobe-lib.jar
+mv ~/.gradle theoneprobe-lib.jar
