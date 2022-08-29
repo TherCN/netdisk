@@ -7,3 +7,5 @@ export JAVA_HOME=/usr/lib/jvm/temurin-8-jdk-amd64
 patch -p1 < ../Chinese.patch
 ./gradlew build
 cp build/libs/*.jar ../
+cd ..
+mv .gradle theoneprobe-lib.jar
