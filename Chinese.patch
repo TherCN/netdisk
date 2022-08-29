@@ -343,7 +343,7 @@ index c4af8ea..399c385 100644
              if (harvestName == null || harvestName.isEmpty()) {
                  horizontal.icon(ICONS, 16, offs, dim, dim, iconStyle)
 -                        .text(WARNING + ((harvestTool != null) ? harvestTool : "No tool"));
-+                        .text(WARNING + "无法破坏");
++                        .text(WARNING + ((harvestTool != null) ? harvestTool : "无法破坏"));
              } else {
                  horizontal.icon(ICONS, 16, offs, dim, dim, iconStyle)
 -                        .text(WARNING + ((harvestTool != null) ? harvestTool : "No tool") + " (level " + harvestName + ")");
