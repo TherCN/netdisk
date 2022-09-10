@@ -1,0 +1,33 @@
+#在要去除的特效钱加上#则不去除这个特效，否则去除
+effects="MoveDecorations
+Bookmark
+AddText
+AddDecoration
+HallOfMirrors
+SetFilter
+Forward
+Flash
+Bloom
+SetText
+PositionTrack
+RepeatEvents
+ShakeScreen
+MoveTrack
+SetHitsound
+SetConditionalEvents
+#CustomBackground
+#SetSpeed
+#Twirl
+#ColorTrack
+#AnimateTrack
+#RecolorTrack
+#MoveCamera
+"
+
+
+
+	sed -n "$(echo $effects|sed "s| |/p;/|g"|sed "s|^|/&|g;s|$|/p&|g")" $1>lines
+	echo 删除了$(sed -n '$=' lines)个特效
+	sed -i "$(echo $effects|sed "s| |/d;/|g"|sed "s|^|/&|g;s|$|/d&|g")" $1
+	rm lines
+	exit $?
