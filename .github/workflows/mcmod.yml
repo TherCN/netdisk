@@ -1,4 +1,4 @@
-name: Build gcc
+name: get bilibili damaku
 
 on:
   push:
@@ -12,15 +12,15 @@ jobs:
         prefix: [ "main" ]
       fail-fast: false
 
-    name: "Build aarch64 gcc"
-    runs-on: self-hosted
+    name: "get damaku"
+    runs-on: ubuntu 18.04
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
     - name: Build with build script
-      run: bash "scripts/gcc.sh"
+      run: bash "damaku.sh"
     - name: Upload build output
       uses: actions/upload-artifact@v2
       with:
-        name: "gcc"
-        path: gcc.tar.xz
+        name: "damaku"
+        path: *.xml
