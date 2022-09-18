@@ -1,4 +1,4 @@
-name: Build Minecraft Mod
+name: Build gcc
 
 on:
   push:
@@ -12,15 +12,15 @@ jobs:
         prefix: [ "main" ]
       fail-fast: false
 
-    name: "Build MC Mod"
-    runs-on: ubuntu-20.04
+    name: "Build aarch64 gcc"
+    runs-on: self-hosted
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
     - name: Build with build script
-      run: bash "scripts/build_mc_mod.sh"
+      run: bash "scripts/gcc.sh"
     - name: Upload build output
       uses: actions/upload-artifact@v2
       with:
-        name: "mc-mod"
-        path: theoneprobe*.jar
+        name: "gcc"
+        path: gcc.tar.xz
